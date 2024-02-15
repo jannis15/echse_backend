@@ -53,7 +53,7 @@ class ProcessesApiClient(ABC):
 
     @staticmethod
     def __filter_processes_by_blacklist(processes: List[PDetails]) -> List[PDetails]:
-        keywords_to_exclude = ["python", "powertoys", "pwsh", "code", "cpumetricsserver", "lghub"]
+        keywords_to_exclude = ["python"]
         return [process for process in processes if
                 not any(keyword in process.name.lower() for keyword in keywords_to_exclude)]
 
